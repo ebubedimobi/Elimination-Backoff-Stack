@@ -7,6 +7,7 @@
 
 import Foundation
 
+//Extension for changing type Double from seconds to nanoSeconds
 extension Double {
     
     func toNano() -> Double {
@@ -14,7 +15,7 @@ extension Double {
     }
 }
 
-
+//Custom time unit and unit change
 enum TimeUnit: Double {
     case seconds = 1
     case milliseconds = 1000

@@ -62,7 +62,7 @@ class EliminationBackOffStack<T: Equatable> {
                 let otherValue = try eliminatiionArray.visit(with: nil)   //2b
                 if otherValue != nil { return otherValue }               //3a
             } catch { }
-        }  //                                                            //3b
+        }                                                               //3b
     }
     
      // 1. Get stack top.
