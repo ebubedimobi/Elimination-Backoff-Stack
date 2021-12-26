@@ -51,4 +51,13 @@ struct Atomic<Value: Equatable> {
         }
         return isSame
     }
+    
+    //just for integer
+    //needed for benchMark
+    mutating func increaseAndGet() -> Value where Value == Int {
+        lock.lock()
+        defer { lock.unlock() }
+        value = value! + 1
+        return value!
+    }
 }

@@ -7,8 +7,10 @@
 
 import Foundation
 
+
+
 var NUM = 1000 // CS: critical section executed per thread
-var TH = 1  // TH: number of threads
+var TH = 10  // TH: number of threads
 var useConcurrentStack = true // test with our safe concurrent stack or not
 
 class Main {
@@ -16,15 +18,16 @@ class Main {
     let concurrentStack: EliminationBackOffStack<Int>
     var poppedValues: [Int: [Int?]] = [:]
     var threads: [Thread] = []
+    let benchMarker: BenchMarkable & Loggable = BenchMark(threadCount: TH)
     
     init() {
         self.stack = .init()
         self.concurrentStack = .init()
     }
     
-    // Each safe thread pushes N numbers and pops N, adding
-    // them to its own poppedValues for checking; using
-    // BackoffStack.
+    // Each unsafe thread pushes N numbers and pops N, adding
+    // them to its own poppedValues for checking; using Java's
+    // sequential stack implementation, ArrayDeque.
     func createThreadUsingUnSafeStack(threadNumber: Int, value: Int, capacity: Int) -> Thread {
         let threadNumber = threadNumber
         
@@ -60,12 +63,22 @@ class Main {
                     value += 1
                 }
                 
-                Thread.sleep(forTimeInterval: 3.0)
+//                Thread.sleep(forTimeInterval: 6.0)
                 action = "pop"
                 for _ in 0..<capacity {
-                    self.poppedValues[threadNumber]?.append(try self.concurrentStack.pop())
+                    let poppedValue = try self.concurrentStack.pop()
+                    self.poppedValues[threadNumber]?.append(poppedValue)
                 }
-                print("thread \(threadNumber)", self.poppedValues[threadNumber]!)
+                self.benchMarker.logTime()
+                let array = self.poppedValues[threadNumber]!.compactMap({ $0 })
+                print(
+                    "\n",
+                    "thread \(threadNumber)\n","count - ",
+                    array.count,
+                    "\n",
+                    array,
+                    "\n"
+                )
             } catch {
                 print("thread\(threadNumber): failed \(action)")
             }
@@ -75,14 +88,18 @@ class Main {
     }
     
     func testThreads(useBackOffStack: Bool) {
-        for threadNumber in 0...TH {
+        for threadNumber in 0..<TH {
             poppedValues[threadNumber] = []
         }
         var threads: [Thread] = []
         threads.reserveCapacity(TH)
-        
+        benchMarker.startTimer()
         for counter in 0..<TH {
-            threads.append(createThreadUsingSafeStack(threadNumber: counter, value: counter * NUM, capacity: NUM))
+            threads.append(
+                useBackOffStack
+                ? createThreadUsingSafeStack(threadNumber: counter, value: counter * NUM, capacity: NUM)
+                : createThreadUsingUnSafeStack(threadNumber: counter, value: counter * NUM, capacity: NUM)
+            )
         }
         
     }
@@ -90,8 +107,12 @@ class Main {
 }
 
 func startup() {
-    let main = Main()
+    print("Enter number of threads")
+    if let parameters = readLine() {
+        TH = Int(parameters) ?? TH
+    }
     
+    let main = Main()
     main.testThreads(useBackOffStack: true)
 }
 

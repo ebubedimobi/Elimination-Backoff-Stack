@@ -17,6 +17,7 @@
 		B290096E2778D8C5009DA5A6 /* EliminationBackoffStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = B290096D2778D8C5009DA5A6 /* EliminationBackoffStack.swift */; };
 		B29009702778D999009DA5A6 /* Atomic.swift in Sources */ = {isa = PBXBuildFile; fileRef = B290096F2778D999009DA5A6 /* Atomic.swift */; };
 		B29009722778E62F009DA5A6 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29009712778E62F009DA5A6 /* Stack.swift */; };
+		B2900974277903D0009DA5A6 /* BenchMark.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2900973277903D0009DA5A6 /* BenchMark.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -43,6 +44,7 @@
 		B290096D2778D8C5009DA5A6 /* EliminationBackoffStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EliminationBackoffStack.swift; sourceTree = "<group>"; };
 		B290096F2778D999009DA5A6 /* Atomic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Atomic.swift; sourceTree = "<group>"; };
 		B29009712778E62F009DA5A6 /* Stack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
+		B2900973277903D0009DA5A6 /* BenchMark.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BenchMark.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 				B290096B2778D5A4009DA5A6 /* EliminationArray.swift */,
 				B290096F2778D999009DA5A6 /* Atomic.swift */,
 				B29009612778BF57009DA5A6 /* Node.swift */,
+				B2900973277903D0009DA5A6 /* BenchMark.swift */,
 				B29009632778C023009DA5A6 /* Errors.swift */,
 				B29009712778E62F009DA5A6 /* Stack.swift */,
 				B290096D2778D8C5009DA5A6 /* EliminationBackoffStack.swift */,
@@ -161,6 +164,7 @@
 				B29009642778C023009DA5A6 /* Errors.swift in Sources */,
 				B29009622778BF57009DA5A6 /* Node.swift in Sources */,
 				B29009682778C52B009DA5A6 /* Exchanger.swift in Sources */,
+				B2900974277903D0009DA5A6 /* BenchMark.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

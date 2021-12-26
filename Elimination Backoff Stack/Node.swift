@@ -14,10 +14,6 @@ class Node<T: Equatable> {
     init(value: T) {
         self.value = value
     }
-    
-//    deinit {
-//
-//    }
 }
 
 extension Node: Equatable {
