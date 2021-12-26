@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		B29009572778BEDA009DA5A6 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29009562778BEDA009DA5A6 /* main.swift */; };
+		B290095F2778BEFF009DA5A6 /* Atomics in Frameworks */ = {isa = PBXBuildFile; productRef = B290095E2778BEFF009DA5A6 /* Atomics */; };
+		B29009622778BF57009DA5A6 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29009612778BF57009DA5A6 /* Node.swift */; };
+		B29009642778C023009DA5A6 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29009632778C023009DA5A6 /* Errors.swift */; };
+		B29009662778C088009DA5A6 /* AtomicStampedReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29009652778C088009DA5A6 /* AtomicStampedReference.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +29,9 @@
 /* Begin PBXFileReference section */
 		B29009532778BEDA009DA5A6 /* Elimination Backoff Stack */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Elimination Backoff Stack"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B29009562778BEDA009DA5A6 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		B29009612778BF57009DA5A6 /* Node.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
+		B29009632778C023009DA5A6 /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
+		B29009652778C088009DA5A6 /* AtomicStampedReference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AtomicStampedReference.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B290095F2778BEFF009DA5A6 /* Atomics in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,6 +66,9 @@
 			isa = PBXGroup;
 			children = (
 				B29009562778BEDA009DA5A6 /* main.swift */,
+				B29009652778C088009DA5A6 /* AtomicStampedReference.swift */,
+				B29009612778BF57009DA5A6 /* Node.swift */,
+				B29009632778C023009DA5A6 /* Errors.swift */,
 			);
 			path = "Elimination Backoff Stack";
 			sourceTree = "<group>";
@@ -78,6 +89,9 @@
 			dependencies = (
 			);
 			name = "Elimination Backoff Stack";
+			packageProductDependencies = (
+				B290095E2778BEFF009DA5A6 /* Atomics */,
+			);
 			productName = "Elimination Backoff Stack";
 			productReference = B29009532778BEDA009DA5A6 /* Elimination Backoff Stack */;
 			productType = "com.apple.product-type.tool";
@@ -106,6 +120,9 @@
 				Base,
 			);
 			mainGroup = B290094A2778BEDA009DA5A6;
+			packageReferences = (
+				B290095D2778BEFF009DA5A6 /* XCRemoteSwiftPackageReference "swift-atomics" */,
+			);
 			productRefGroup = B29009542778BEDA009DA5A6 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -120,7 +137,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B29009662778C088009DA5A6 /* AtomicStampedReference.swift in Sources */,
 				B29009572778BEDA009DA5A6 /* main.swift in Sources */,
+				B29009642778C023009DA5A6 /* Errors.swift in Sources */,
+				B29009622778BF57009DA5A6 /* Node.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,6 +302,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B290095D2778BEFF009DA5A6 /* XCRemoteSwiftPackageReference "swift-atomics" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-atomics.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B290095E2778BEFF009DA5A6 /* Atomics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B290095D2778BEFF009DA5A6 /* XCRemoteSwiftPackageReference "swift-atomics" */;
+			productName = Atomics;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B290094B2778BEDA009DA5A6 /* Project object */;
 }
