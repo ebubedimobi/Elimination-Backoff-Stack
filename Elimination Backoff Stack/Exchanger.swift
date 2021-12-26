@@ -8,6 +8,9 @@
 import Foundation
 import CoreLocation
 
+// Exchanger is a lock-free object that permits two threads
+// to exchange values, within a time limit.
+
 private enum States: Int {
     case empty = 0
     case waiting = 1
@@ -15,7 +18,7 @@ private enum States: Int {
 }
 
 class Exchanger<T: Equatable> {
-    var slot: AtomicStampedReference<T> // slot: stores value and stamp
+    private var slot: AtomicStampedReference<T> // slot: stores value and stamp
     
     init() {
         slot = AtomicStampedReference<T>(value: nil, stamp: States.empty.rawValue)

@@ -14,6 +14,7 @@
 		B29009662778C088009DA5A6 /* AtomicStampedReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29009652778C088009DA5A6 /* AtomicStampedReference.swift */; };
 		B29009682778C52B009DA5A6 /* Exchanger.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29009672778C52B009DA5A6 /* Exchanger.swift */; };
 		B290096A2778C7D1009DA5A6 /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29009692778C7D1009DA5A6 /* Double+Extension.swift */; };
+		B290096C2778D5A4009DA5A6 /* EliminationArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = B290096B2778D5A4009DA5A6 /* EliminationArray.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -36,6 +37,7 @@
 		B29009652778C088009DA5A6 /* AtomicStampedReference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AtomicStampedReference.swift; sourceTree = "<group>"; };
 		B29009672778C52B009DA5A6 /* Exchanger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exchanger.swift; sourceTree = "<group>"; };
 		B29009692778C7D1009DA5A6 /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
+		B290096B2778D5A4009DA5A6 /* EliminationArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EliminationArray.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 				B29009562778BEDA009DA5A6 /* main.swift */,
 				B29009652778C088009DA5A6 /* AtomicStampedReference.swift */,
 				B29009672778C52B009DA5A6 /* Exchanger.swift */,
+				B290096B2778D5A4009DA5A6 /* EliminationArray.swift */,
 				B29009612778BF57009DA5A6 /* Node.swift */,
 				B29009632778C023009DA5A6 /* Errors.swift */,
 				B29009692778C7D1009DA5A6 /* Double+Extension.swift */,
@@ -144,6 +147,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B29009662778C088009DA5A6 /* AtomicStampedReference.swift in Sources */,
+				B290096C2778D5A4009DA5A6 /* EliminationArray.swift in Sources */,
 				B29009572778BEDA009DA5A6 /* main.swift in Sources */,
 				B290096A2778C7D1009DA5A6 /* Double+Extension.swift in Sources */,
 				B29009642778C023009DA5A6 /* Errors.swift in Sources */,
