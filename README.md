@@ -1,0 +1,2 @@
+# Elimination-Backoff-Stack
+Elimination-backoff stack is an unbounded lock-free LIFO linked list, that eliminates concurrent pairs of pushes and pops with exchanges. It uses compare-and-set (CAS) atomic operation to provide concurrent access with obstruction freedom. In order to support even greater concurrency, in case a push/pop fails, it tries to pair it with another pop/push to eliminate the operation through exchange of values.
