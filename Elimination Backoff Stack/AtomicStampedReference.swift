@@ -49,7 +49,7 @@ struct AtomicStampedReference<Value: Equatable> {
     /// - Parameters:
     ///   - newValue: the new value for the reference
     ///   - newStamp: the new value for the stamp
-    mutating func set(newValue: Value, newStamp: Int) {
+    mutating func set(newValue: Value?, newStamp: Int) {
         lock.lock()
         defer { lock.unlock() }
         value = newValue
@@ -64,7 +64,7 @@ struct AtomicStampedReference<Value: Equatable> {
     ///   - newStamp: the new value for the stamp
     /// - Returns: true if successful
     mutating func compareAndSet(
-        expectedValue: Value,
+        expectedValue: Value?,
         newValue: Value?,
         expectedStamp: Int,
         newStamp: Int
@@ -85,7 +85,7 @@ struct AtomicStampedReference<Value: Equatable> {
     ///   - newStamp:  the new value for the stamp
     /// - Returns: true if successful
     mutating func attemptStamp(
-        expectedValue: Value,
+        expectedValue: Value?,
         newStamp: Int
     ) -> Bool {
         lock.lock()
