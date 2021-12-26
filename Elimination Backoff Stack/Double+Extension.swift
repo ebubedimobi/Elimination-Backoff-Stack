@@ -17,6 +17,7 @@ extension Double {
 
 enum TimeUnit: Double {
     case seconds = 1
+    case milliseconds = 1000
     case nanoSeconds = 1000000000
     
     func change(to: TimeUnit, value: Double) -> Double {

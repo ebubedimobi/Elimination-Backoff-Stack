@@ -26,7 +26,7 @@ class EliminationArray<T: Equatable> {
     }
     
     // Try exchanging value on a random exchanger.
-    func visit(with value: T) throws -> T? {
+    func visit(with value: T?) throws -> T? {
         let randomIndex = Int.random(in: 0..<exchangers.count)
         return try exchangers[randomIndex].exchange(value: value, timeout: timeout, unit: timeUnit)
     }
