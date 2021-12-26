@@ -14,10 +14,14 @@ class Node<T: Equatable> {
     init(value: T) {
         self.value = value
     }
+    
+//    deinit {
+//
+//    }
 }
 
 extension Node: Equatable {
     static func == (lhs: Node<T>, rhs: Node<T>) -> Bool {
-       return lhs === rhs
+        return lhs.value == rhs.value
     }
 }

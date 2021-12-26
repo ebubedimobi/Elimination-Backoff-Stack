@@ -68,7 +68,7 @@ class EliminationBackOffStack<T: Equatable> {
      // 1. Get stack top.
      // 2. Set node's next to top.
      // 3. Try push node at top (CAS).
-    func tryPush(newNode: Node<T>) -> Bool {
+    private func tryPush(newNode: Node<T>) -> Bool {
         let currentTopNode = top.get()  //1
         newNode.next = currentTopNode   //2
         return top.compareAndSet(valueToCompare: currentTopNode, newValue: newNode) //3
@@ -76,7 +76,7 @@ class EliminationBackOffStack<T: Equatable> {
     
     // 1. Get stack top, and ensure stack not empty.
     // 2. Try pop node at top, and set top to next (CAS).
-    func tryPop() throws -> Node<T>? {
+    private func tryPop() throws -> Node<T>? {
         let currentTopNode = top.get()         //1
         if currentTopNode == nil {             //1
             throw ErrorType.emptyStackException
