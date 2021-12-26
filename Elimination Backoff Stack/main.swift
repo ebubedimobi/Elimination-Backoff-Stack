@@ -9,7 +9,7 @@ import Foundation
 
 
 
-var NUM = 1000 // CS: critical section executed per thread
+var NUM = 1000 // NUM: number of push and pop operations executed per thread
 var TH = 10  // TH: number of threads
 var useConcurrentStack = true // test with our safe concurrent stack or not
 
